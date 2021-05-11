@@ -1,0 +1,12 @@
+<h1>ALL MOVIES</h1>
+
+<p>display all movies here</p>
+
+<ul>
+    {{#each movies}}
+    <li class="single-movie"> {{this.title}}; {{this.genre}};
+        {{this.plot}}</li>
+    <a href="movie/update/{{this._id}}"><i class="fas fa-pen"></i></a>
+    <a href="movie/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
+    {{/each}}
+</ul>

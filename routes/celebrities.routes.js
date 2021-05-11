@@ -3,7 +3,7 @@ const router = express.Router();
 const CelebrityModel = require("./../models/celebrity.model")
 
 /* GET celebrities page */
-router.get("/", (req, res, next) => {
+router.get("/celebrities", (req, res, next) => {
     CelebrityModel.find()
     .then((dbResult) => {
         res.render("celebrities/celebrities", {
@@ -14,7 +14,7 @@ router.get("/", (req, res, next) => {
     .catch((dbErr) => next(dbErr));
 });
 
-/* GET celebrities page */
+/* Add a new celebrity */
 router.get("/celebrities/new", (req, res, next) => res.render("celebrities/new-celebrity"));
 
 
