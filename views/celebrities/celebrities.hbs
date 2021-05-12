@@ -2,11 +2,9 @@
 
 <p>display all celebrities here</p>
 
-<ul>
-    {{#each celebrities}}
-    <li class="single-celebrity"> {{this.name}}; {{this.occupation}};
-        {{this.catchPhrase}}</li>
-    <a href="celebrity/update/{{this._id}}"><i class="fas fa-pen"></i></a>
-    <a href="celebrity/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
-    {{/each}}
-</ul>
+<a href="./new">Create a new celebrity</a>
+
+<h2>List of Celebrities</h2>
+{{#each celebrities }}
+  <p>{{this.name}}</p>
+{{/each}}
