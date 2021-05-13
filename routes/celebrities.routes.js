@@ -3,19 +3,15 @@ const router = express.Router();
 const CelebrityModel = require("./../models/celebrity.model")
 
 /* GET celebrities page */
-// celebrityRouter.get("/celebrities", (req, res, next) => {
-//     CelebrityModel.find()
-//     .then((dbResult) => {
-//         res.render("celebrities/celebrities", {
-//             Title: "celebrityList",
-//             celebrities: dbResult,
-//         });
-//     })
-//     .catch((dbErr) => next(dbErr));
-// });
+router.get("/celebrities", async (req, res, next) => {
+  try {
+    res.render("celebrities/celebrities", { celebrities: await CelebrityModel.find() });
+  } catch (err) {
+    next(err);
+  }
+});
 
-// /* Add a new celebrity */
-// celebrityRouter.get("/celebrities/new", (req, res, next) => res.render("celebrities/new-celebrity"));
+// Add a new celebrity 
 
 router.get("/new", async (req, res, next) => {
     const celebrities = await CelebrityModel.find();
@@ -34,14 +30,4 @@ router.get("/new", async (req, res, next) => {
     }
   });
   
-  // // Get all celebrities
-  router.get("/celebrities", async (req, res, next) => {
-    try {
-      res.render("celebrities/celebrities", { celebrities: await CelebrityModel.find() });
-    } catch (err) {
-      next(err);
-    }
-  });
-  
-
 module.exports = router;

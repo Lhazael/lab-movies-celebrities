@@ -2,9 +2,11 @@
 
 <p>display all celebrities here</p>
 
-<a href="./new">Create a new celebrity</a>
+<a href="./new">Add a new celebrity</a>
 
 <h2>List of Celebrities</h2>
 {{#each celebrities }}
   <p>{{this.name}}</p>
+  <a href="/celebrities/celebrity-details">See more</a>
+
 {{/each}}
