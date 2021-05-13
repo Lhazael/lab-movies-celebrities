@@ -34,7 +34,6 @@ app.locals.title = "Movies and Celebrities";
 //      V  V  V
 app.use("/", require("./routes/index.routes.js"));
 app.use("/celebrities", require("./routes/celebrities.routes.js"));
-app.use("/celebrities/celebrity-details", require("./routes/celebrities.routes.js"));
 app.use("/movies", require("./routes/movies.routes.js"));
 
 
